@@ -4,12 +4,10 @@ function getUser(req, resp) {
     console.log(req.body)
 
     var user = {
-        "clientInfo": {
-            "name": "Nathan Oliveira",
-            "id": 6722,
-            "birthdate": "1991-03-28",
-            "document": "87237236722"
-        }
+        "name": "Nathan Oliveira",
+        "id": 6722,
+        "birthdate": "1991-03-28",
+        "document": "87237236722"
     };
 
     var response = {
