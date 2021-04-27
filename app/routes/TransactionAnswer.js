@@ -13,6 +13,10 @@ module.exports = (app) => {
         controller.getUser(req, resp);
     });
 
+    app.post('/transactionalCell/address', (req, resp) => {
+        controller.getAddress(req, resp);
+    });
+
     app.post('/transactionalCell/replace', (req, resp) => {
         controller.replace(req, resp);
     });

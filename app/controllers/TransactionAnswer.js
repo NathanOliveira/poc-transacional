@@ -1,3 +1,34 @@
+function getAddress(req, resp) {
+
+    var answer = req.body.answer;
+
+
+    var address = {
+        "Rua": "Rua dos bugs",
+        "id": 6722,
+        "Bairo": "Bug Central",
+        "numero": "404"
+    };
+
+    var response = {
+        openContext: req.body.openContext,
+        visibleContext: {
+            ...req.body.visibleContext,
+            ...address
+        },
+        hiddenContext: {
+            ...req.body.hiddenContext,
+            ...address
+        },
+        answer
+    }
+
+    console.log("request: ", req.body)
+    console.log("response: ", response)
+
+    resp.status(200).send(response);
+}
+
 function getUser(req, resp) {
 
     var answer = req.body.answer;
@@ -107,5 +138,6 @@ module.exports = {
     getPhones,
     getProduct,
     replace,
-    getUser
+    getUser,
+    getAddress
 };
