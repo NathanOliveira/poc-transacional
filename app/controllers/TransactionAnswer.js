@@ -15,7 +15,7 @@ function getUser(req, resp) {
         openContext: req.body.openContext,
         visibleContext: {
             ...req.body.visibleContext,
-            user
+            ...user
         },
         hiddenContext: req.body.hiddenContext,
         answer
