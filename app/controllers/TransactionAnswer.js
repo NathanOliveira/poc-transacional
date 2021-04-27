@@ -18,7 +18,10 @@ function getUser(req, resp) {
             ...req.body.visibleContext,
             ...user
         },
-        hiddenContext: req.body.hiddenContext,
+        hiddenContext: {
+            ...req.body.hiddenContext,
+            ...user
+        },
         answer
     }
 
