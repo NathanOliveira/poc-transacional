@@ -1,6 +1,7 @@
 function getUser(req, resp) {
 
     var answer = req.body.answer;
+    console.log(req.body)
 
     var user = {
         "clientInfo": {
