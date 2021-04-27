@@ -23,7 +23,8 @@ function getUser(req, resp) {
         answer
     }
 
-    console.log(req.body)
+    console.log("request: ", req.body)
+    console.log("response: ", response)
 
     resp.status(200).send(response);
 }
