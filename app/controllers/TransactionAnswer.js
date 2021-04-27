@@ -1,7 +1,7 @@
 function getUser(req, resp) {
 
     var answer = req.body.answer;
-    console.log(req.body)
+
 
     var user = {
         "name": "Nathan Oliveira",
@@ -22,6 +22,8 @@ function getUser(req, resp) {
         },
         answer
     }
+
+    console.log(req.body)
 
     resp.status(200).send(response);
 }
