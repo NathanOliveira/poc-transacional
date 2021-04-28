@@ -1,3 +1,42 @@
+function getBoleto(req, resp) {
+    var answer = req.body.answer;
+
+    let detalheBoleto = {
+        contratosResumoFinancVeiculo: [{
+            numeroContratoMask: "120470002****",
+            sequenciaContrato: 3,
+            placaCarroMask: "GIN-3***",
+            modeloCarro: "HB20X PREMIUM(BlueMedia e Couro) 1.6 16V AT 4P (AG) Complet - HYUNDAI",
+            codigoStatusFinanciamento: 1,
+            statusFinanciamento: "EM ABERTO",
+            statusFinanciamentoContrato: 1,
+            parcelaResumo: {
+                numeroParcela: 2,
+                codigoStatusParcela: 4,
+                statusParcela: "Em dia",
+                dataVencimentoParcela: "2021-04-15",
+                valorParcela: 1044.50,
+                linhaDigitavel: "65590.00002 00400.500005 01042.041002 4 85270000104277"
+            }
+        }]
+    }
+
+    var response = {
+        openContext: req.body.openContext,
+        visibleContext: req.body.visibleContext,
+        hiddenContext: {
+            ...req.body.hiddenContext,
+            ...detalheBoleto
+        },
+        answer
+    }
+
+    console.log("request: ", req.body)
+    console.log("response: ", response)
+
+    resp.status(200).send(response);
+}
+
 function getAddress(req, resp) {
 
     var answer = req.body.answer;
@@ -140,5 +179,6 @@ module.exports = {
     getProduct,
     replace,
     getUser,
-    getAddress
+    getAddress,
+    getBoleto
 };

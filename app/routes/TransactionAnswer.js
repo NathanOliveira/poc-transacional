@@ -17,6 +17,10 @@ module.exports = (app) => {
         controller.getAddress(req, resp);
     });
 
+    app.post('/transactionalCell/getBoleto', (req, resp) => {
+        controller.getBoleto(req, resp);
+    });
+
     app.post('/transactionalCell/replace', (req, resp) => {
         controller.replace(req, resp);
     });
