@@ -2,7 +2,6 @@ function getAddress(req, resp) {
 
     var answer = req.body.answer;
 
-
     var address = {
         "Rua": "Rua dos bugs",
         "id": 6722,
@@ -33,12 +32,14 @@ function getUser(req, resp) {
 
     var answer = req.body.answer;
 
-
     var user = {
         "name": "Nathan Oliveira",
         "id": 6722,
         "birthdate": "1991-03-28",
-        "document": "87237236722"
+        "document": "87237236722",
+        "Rua": "Rua dos bugs",
+        "Bairo": "Bug Central",
+        "numero": "404"
     };
 
     var response = {
