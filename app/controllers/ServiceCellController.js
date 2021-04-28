@@ -14,10 +14,10 @@ function userProduct(req, resp) {
             },
             {
                 codigo: "FIV",
-                descricao: "Financiamentos - Veiculos"
+                descricao: "Financiamento - Veiculos"
             },
             {
-                codigo: "CC",
+                codigo: "FIO",
                 descricao: "Financiamento - Outros"
             }
         ]
