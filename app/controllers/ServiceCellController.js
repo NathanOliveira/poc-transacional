@@ -2,7 +2,7 @@ function usuarioIdentificado(req, resp) {
 
     let userProduct = {
         usuarioIdentificado: true,
-        financiamentoVeiculo: true,
+        financiamentoVeiculo: false,
         financiamentoOutros: true,
         produtos: [{
                 codigo: "CD",
