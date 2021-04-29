@@ -32,6 +32,7 @@ function getProduct(req, resp) {
 }
 
 function getDetails(req, resp) {
+    let answerText = req.body.answer.content.content;
     let answer = req.body.answer;
 
     for (let parameter in req.body.hiddenContext) {
