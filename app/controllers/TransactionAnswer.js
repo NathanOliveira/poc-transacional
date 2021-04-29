@@ -1,3 +1,38 @@
+function getCustomerDetails(req, resp) {
+    let answerText = req.body.answer.content.content;
+    let answer = req.body.answer;
+
+    for (let parameter in req.body.hiddenContext) {
+
+        switch (parameter) {
+            case 'produtos':
+                let buttons = req.body.hiddenContext.produtos.map(element => {
+                    return {
+                        "name": element.descricao,
+                        "value": element.codigo
+                    }
+                });
+                buttons.push(...req.body.answer.content.buttons);
+                answer.content.buttons = buttons
+                break;
+            default:
+                answerText = answerText.replace(`__${parameter}__`, req.body.hiddenContext[parameter]);
+        }
+    }
+
+    answer.content.content = answerText;
+
+    var response = {
+        openContext: req.body.openContext,
+        visibleContext: req.body.visibleContext,
+        hiddenContext: req.body.hiddenContext,
+        answer
+    }
+
+    resp.status(200).send(response);
+
+}
+
 function getBoleto(req, resp) {
     var answer = req.body.answer;
 
@@ -177,5 +212,6 @@ module.exports = {
     replace,
     getUser,
     getAddress,
-    getBoleto
+    getBoleto,
+    getCustomerDetails
 };

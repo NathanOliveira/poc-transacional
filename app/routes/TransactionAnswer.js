@@ -25,4 +25,8 @@ module.exports = (app) => {
         controller.replace(req, resp);
     });
 
+    app.post('/transactionalCell/detalhesCliente', (req, resp) => {
+        controller.getCustomerDetails(req, resp);
+    });
+
 }
