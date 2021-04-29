@@ -5,16 +5,20 @@ function usuarioIdentificado(req, resp) {
         financiamentoVeiculo: true,
         financiamentoOutros: true,
         produtos: [{
-                name: "(11) 1234-5678",
-                value: "C:123456"
+                codigo: "CD",
+                descricao: "Conta Digital"
             },
             {
-                name: "(11) 1111-1111",
-                value: "C:123456"
+                codigo: "CC",
+                descricao: "Cartão de Crédito"
             },
             {
-                name: "(11) 2222-2222",
-                value: "C:123456"
+                codigo: "FIV",
+                descricao: "Financiamento - Veiculos"
+            },
+            {
+                codigo: "FIO",
+                descricao: "Financiamento - Outros"
             }
         ]
     };
