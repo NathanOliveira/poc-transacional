@@ -1,4 +1,4 @@
-function userProduct(req, resp) {
+function usuarioIdentificado(req, resp) {
 
     let userProduct = {
         usuarioIdentificado: true,
@@ -39,6 +39,20 @@ function userProduct(req, resp) {
     resp.status(200).send(response);
 }
 
+function financiamentoVeiculo(req, resp) {
+    let body = req.body;
+
+    var response = {
+        openContext: req.body.openContext,
+        visibleContext: req.body.visibleContext,
+        hiddenContext: req.body.hiddenContext,
+        option: body.hiddenContext.financiamentoVeiculo.toString().toUpperCase()
+    }
+
+    resp.status(200).send(response);
+
+}
+
 
 function ServiceCell(req, resp) {
     var option = req.query.option;
@@ -54,5 +68,6 @@ function ServiceCell(req, resp) {
 
 module.exports = {
     ServiceCell,
-    userProduct
+    usuarioIdentificado,
+    financiamentoVeiculo
 }
