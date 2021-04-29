@@ -20,7 +20,14 @@ function usuarioIdentificado(req, resp) {
                 codigo: "FIO",
                 descricao: "Financiamento - Outros"
             }
-        ]
+        ],
+        name: "Nathan Oliveira",
+        id: 6722,
+        birthdate: "1991-03-28",
+        document: req.body.visibleContext.nuCpfCnpj,
+        Rua: "Rua dos bugs",
+        Bairo: "Bug Central",
+        numero: "404"
     };
 
     var response = {

@@ -5,8 +5,12 @@ module.exports = (app) => {
         controller.getPhones(req, resp);
     });
 
-    app.post('/transactionalCell/setProducts', (req, resp) => {
+    app.post('/transactionalCell/getProducts', (req, resp) => {
         controller.getProduct(req, resp);
+    });
+
+    app.post('/transactionalCell/getDetails', (req, resp) => {
+        controller.getDetails(req, resp);
     });
 
     app.post('/transactionalCell/user', (req, resp) => {
@@ -24,9 +28,4 @@ module.exports = (app) => {
     app.post('/transactionalCell/replace', (req, resp) => {
         controller.replace(req, resp);
     });
-
-    app.post('/transactionalCell/detalhesCliente', (req, resp) => {
-        controller.getCustomerDetails(req, resp);
-    });
-
 }

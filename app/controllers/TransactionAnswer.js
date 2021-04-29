@@ -1,4 +1,4 @@
-function getCustomerDetails(req, resp) {
+function getProduct(req, resp) {
     let answerText = req.body.answer.content.content;
     let answer = req.body.answer;
 
@@ -15,8 +15,6 @@ function getCustomerDetails(req, resp) {
                 buttons.push(...req.body.answer.content.buttons);
                 answer.content.buttons = buttons
                 break;
-            default:
-                answerText = answerText.replace(`__${parameter}__`, req.body.hiddenContext[parameter]);
         }
     }
 
@@ -31,6 +29,21 @@ function getCustomerDetails(req, resp) {
 
     resp.status(200).send(response);
 
+}
+
+function getDetails(req, resp) {
+    let answer = req.body.answer;
+
+    answer.content.content = answerText.replace(`__${parameter}__`, req.body.hiddenContext[parameter]);;
+
+    var response = {
+        openContext: req.body.openContext,
+        visibleContext: req.body.visibleContext,
+        hiddenContext: req.body.hiddenContext,
+        answer
+    }
+
+    resp.status(200).send(response);
 }
 
 function getBoleto(req, resp) {
@@ -161,34 +174,6 @@ function getPhones(req, resp) {
     resp.status(200).send(response);
 }
 
-function getProduct(req, resp) {
-
-    var answer = req.body.answer;
-
-    var buttons = [{
-            name: "Conta Corrente",
-            value: "C:123456"
-        },
-        {
-            name: "Poupança",
-            value: "C:123456"
-        },
-        {
-            name: "Carteira de investimentos",
-            value: "C:123456"
-        }
-    ]
-    answer.content.buttons = buttons;
-
-    var response = {
-        openContext: req.body.openContext,
-        visibleContext: req.body.visibleContext,
-        hiddenContext: req.body.hiddenContext,
-        answer
-    }
-
-    resp.status(200).send(response);
-}
 
 function replace(req, resp) {
     var answerText = req.body.answer.content.content;
@@ -213,5 +198,5 @@ module.exports = {
     getUser,
     getAddress,
     getBoleto,
-    getCustomerDetails
+    getDetails
 };
