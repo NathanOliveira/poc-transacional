@@ -34,7 +34,9 @@ function getProduct(req, resp) {
 function getDetails(req, resp) {
     let answer = req.body.answer;
 
-    answer.content.content = answerText.replace(`__${parameter}__`, req.body.hiddenContext[parameter]);;
+    for (let parameter in req.body.hiddenContext) {
+        answer.content.content = answerText.replace(`__${parameter}__`, req.body.hiddenContext[parameter]);
+    }
 
     var response = {
         openContext: req.body.openContext,
