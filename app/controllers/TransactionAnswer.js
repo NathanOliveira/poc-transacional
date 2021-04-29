@@ -32,20 +32,18 @@ function getProduct(req, resp) {
 }
 
 function getDetails(req, resp) {
-    let answerText = req.body.answer.content.content;
-    let answer = req.body.answer;
-
-    for (let parameter in req.body.hiddenContext) {
-        answer.content.content = answerText.replace(`__${parameter}__`, req.body.hiddenContext[parameter]);
+    var answerText = req.body.answer.content.content;
+    for (var parameter in req.body.hiddenContext) {
+        answerText = answerText.replace(`__${parameter}__`, req.body.hiddenContext[parameter]);
     }
-
+    var answer = req.body.answer;
+    answer.content.content = answerText;
     var response = {
         openContext: req.body.openContext,
         visibleContext: req.body.visibleContext,
         hiddenContext: req.body.hiddenContext,
         answer
     }
-
     resp.status(200).send(response);
 }
 
