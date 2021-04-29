@@ -5,20 +5,20 @@ function usuarioIdentificado(req, resp) {
         financiamentoVeiculo: true,
         financiamentoOutros: true,
         produtos: [{
-                codigo: "CD",
-                descricao: "Conta Digital"
+                value: "CD",
+                name: "Conta Digital"
             },
             {
-                codigo: "CC",
-                descricao: "Cartão de Crédito"
+                value: "CC",
+                name: "Cartão de Crédito"
             },
             {
-                codigo: "FIV",
-                descricao: "Financiamento - Veiculos"
+                value: "FIV",
+                name: "Financiamento - Veiculos"
             },
             {
-                codigo: "FIO",
-                descricao: "Financiamento - Outros"
+                value: "FIO",
+                name: "Financiamento - Outros"
             }
         ],
         name: "Nathan Oliveira",
