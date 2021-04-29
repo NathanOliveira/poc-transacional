@@ -83,10 +83,7 @@ function getUser(req, resp) {
 
     var response = {
         openContext: req.body.openContext,
-        visibleContext: {
-            ...req.body.visibleContext,
-            ...user
-        },
+        visibleContext: req.body.visibleContext,
         hiddenContext: {
             ...req.body.hiddenContext,
             ...user
